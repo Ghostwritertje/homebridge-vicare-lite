@@ -1,0 +1,37 @@
+{
+  "pluginAlias": "ViCareLite",
+  "pluginType": "platform",
+  "singular": true,
+  "headerDisplay": "Log in once with `node scripts/vicare-auth.mjs` (see README) before starting Homebridge.",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Name",
+        "type": "string",
+        "default": "ViCare"
+      },
+      "clientId": {
+        "title": "Client ID from the Viessmann developer portal",
+        "type": "string",
+        "required": true
+      },
+      "pollInterval": {
+        "title": "Poll interval in seconds (1 API call each; the Basic plan allows 1450 per day)",
+        "type": "integer",
+        "default": 300,
+        "minimum": 120
+      },
+      "names": {
+        "title": "Accessory names",
+        "type": "object",
+        "properties": {
+          "dhw": { "title": "Hot water temperature", "type": "string", "placeholder": "Hot water" },
+          "room": { "title": "Room temperature", "type": "string", "placeholder": "Room temperature" },
+          "outside": { "title": "Outside temperature", "type": "string", "placeholder": "Outside temperature" },
+          "boost": { "title": "One-time hot water charge switch", "type": "string", "placeholder": "Hot water boost" }
+        }
+      }
+    }
+  }
+}

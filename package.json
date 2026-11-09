@@ -1,0 +1,40 @@
+{
+  "private": true,
+  "displayName": "ViCare Lite",
+  "name": "homebridge-vicare-lite",
+  "version": "1.0.0",
+  "description": "Viessmann heat pump (ViCare API) in Apple Home: hot water, room and outside temperature, one-time hot water charge.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ghostwritertje/homebridge-vicare-lite.git"
+  },
+  "engines": {
+    "homebridge": "^1.8.0 || ^2.0.0",
+    "node": "^22.12.0 || ^24.0.0 || ^26.0.0"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "scripts",
+    "config.schema.json"
+  ],
+  "scripts": {
+    "lint": "eslint src --max-warnings=0",
+    "build": "tsc",
+    "prepack": "npm run lint && npm run build"
+  },
+  "keywords": [
+    "homebridge-plugin",
+    "viessmann",
+    "vicare"
+  ],
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "@types/node": "^24.0.0",
+    "eslint": "^9.0.0",
+    "homebridge": "^2.0.0",
+    "typescript": "^5.0.0",
+    "typescript-eslint": "^8.0.0"
+  }
+}
